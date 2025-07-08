@@ -1,0 +1,202 @@
+/* ROOT ayarları */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Başlık */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Avenir', 'Montserrat', sans-serif;
+}
+
+/* Ürün grid yapısı */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Ürün kartı */
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fff;
+  text-align: left;
+  transition: box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ürün resmi */
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Ürün başlığı ve fiyat */
+.product-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.product-card p {
+  margin: 0.25rem 0;
+}
+
+/* Renk seçenekleri */
+.color-options {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.color-options div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+.color-options .selected {
+  border: 2px solid black;
+}
+
+/* Responsive görünüm */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .product-card img {
+    max-height: 250px;
+    object-fit: contain;
+  }
+}
+
+/* (Opsiyonel) Logo ve bilgi kutuları — kullanılmıyorsa silebilirsin */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+/* === Filtre Paneli Stilleri (Premium Görünüm) === */
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  background: linear-gradient(to right, #fdfdfd, #f7f7f7);
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  margin: 2rem auto;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  max-width: 1200px;
+  font-family: 'Segoe UI', 'Avenir', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  font-size: 0.95rem;
+}
+
+.filter-group label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: #fff;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  border-color: #646cff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(100, 108, 255, 0.3);
+}
+
+.price-inputs {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.price-inputs input {
+  flex: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filter-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .price-inputs {
+    flex-direction: column;
+  }
+}

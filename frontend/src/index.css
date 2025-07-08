@@ -1,0 +1,163 @@
+/* FONTLAR */
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Book.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Avenir';
+  src: url('/fonts/Avenir-Heavy.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* GLOBAL AYARLAR */
+:root {
+  font-family: 'Avenir', 'Montserrat', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(33, 33, 33, 0.95);
+  background-color: #f9f9f9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ROOT kapsayıcısı */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* BAŞLIK */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Avenir', 'Montserrat', sans-serif;
+}
+
+/* ÜRÜN GRIDİ */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ÜRÜN KARTI */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3,
+.product-card p {
+  font-family: 'Avenir', 'Montserrat', sans-serif;
+}
+
+/* RENK SEÇENEKLERİ */
+.color-options {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.color-options div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.color-options div:hover {
+  transform: scale(1.1);
+}
+
+.color-options .selected {
+  border-color: #000;
+}
+
+/* OK BUTONLARI */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.carousel-btn.left {
+  left: 10px;
+}
+
+.carousel-btn.right {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(200, 200, 200, 0.9);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .product-card img {
+    max-height: 220px;
+  }
+}
+
+/* VARSAYILAN HTML ÖĞELERİ */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Avenir', 'Montserrat', sans-serif;
+}
