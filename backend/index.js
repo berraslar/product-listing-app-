@@ -106,7 +106,7 @@ const rawProducts = [
     "rating": 4.5
   }
 ];
-// ✅ Fiyatları formüle göre hesaplayarak yeni liste oluştur
+
 const products = rawProducts.map((product, index) => {
   const priceUSD = ((product.popularityScore + 1) * product.weight * goldPrice).toFixed(2);
   return {
@@ -116,12 +116,12 @@ const products = rawProducts.map((product, index) => {
   };
 });
 
-// 🔁 Tüm ürünleri getir
+
 app.get('/api/products', (req, res) => {
   res.json(products);
 });
 
-// 🧷 Belirli ürünü getir
+
 app.get('/api/products/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const product = products.find(p => p.id === id);
@@ -131,7 +131,7 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product);
 });
 
-// 🚀 Sunucuyu başlat
+
 app.listen(PORT, () => {
   console.log(`API çalışıyor: http://localhost:${PORT}`);
 });

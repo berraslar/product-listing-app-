@@ -13,7 +13,8 @@ function App() {
   const [minRating, setMinRating] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/products')
+    axios.get('https://product-listing-app-zvcz.onrender.com/api/products')
+
       .then(res => {
         const withExtras = res.data.map((p, index) => ({
           ...p,

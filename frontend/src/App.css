@@ -90,7 +90,6 @@ h1 {
   }
 }
 
-/* (Opsiyonel) Logo ve bilgi kutuları — kullanılmıyorsa silebilirsin */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -125,7 +124,7 @@ h1 {
 .read-the-docs {
   color: #888;
 }
-/* === Filtre Paneli Stilleri (Premium Görünüm) === */
+
 .filter-panel {
   display: flex;
   flex-wrap: wrap;
